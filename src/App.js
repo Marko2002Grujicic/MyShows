@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
-
+import MainContent from './components/MainContent';
+import Header from './components/Header'
+import Footer from './components/Footer'
+import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 function App() {
+  const [shows, setShows] = useState([]);
+  const [isLoading, setIsLoading] = useState([true]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch('https://api.tvmaze.com/shows')
+    .then((res) => res.json())
+    .then((data)=> {
+      const slicedData = data.slice(0,50)
+      setShows(slicedData);
+      console.log(shows);
+      setIsLoading(false);
+    })
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isLoading && <LoadingAnimation/>}
+      <Header/>
+      <MainContent shows={shows}/>
+      <Footer/>
     </div>
   );
 }
