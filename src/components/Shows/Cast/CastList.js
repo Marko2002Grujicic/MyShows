@@ -18,7 +18,7 @@ const CastList = ({cast}) => {
                         <img src={member.person.image.original} className="singlePageCast-image-list"/>
                         </div>
                         <div className='col s3'>
-                        <h2 class="card-title singlePageCast-text"><b>{member.person.name}</b></h2>
+                        <h2 className="card-title singlePageCast-text"><b>{member.person.name}</b></h2>
                         </div>
                         
                     </div>

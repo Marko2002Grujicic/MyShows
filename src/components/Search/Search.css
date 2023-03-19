@@ -1,0 +1,6 @@
+.wholePage {
+  height: 100vh;
+}
+.brand-logo:hover {
+  cursor: pointer;
+}

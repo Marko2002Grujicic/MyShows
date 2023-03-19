@@ -1,8 +1,12 @@
-.cover-image {
-  height: 300px;
-  object-fit: cover;
-  border-radius: 5px;
-}
 a:hover {
   cursor: default;
+}
+.changedHeight img {
+  height: 500px;
+}
+.changedContent {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
