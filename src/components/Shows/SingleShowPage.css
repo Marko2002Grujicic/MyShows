@@ -1,11 +1,13 @@
-.row {
-  padding-top: 50px;
+.gap {
+  padding-top: 5%;
 }
 .singlePage-image {
   width: 100%;
+  padding-bottom: 5%;
 }
 .tags {
   margin-right: 20px;
+  border-radius: 100px;
 }
 .tags:hover {
   cursor: default;
@@ -16,4 +18,11 @@
 }
 .singlePageCast-text {
   font-size: 15px !important;
+}
+.view-icon {
+  color: #2196f3;
+}
+.toggleButton {
+  display: flex;
+  justify-content: space-around;
 }
