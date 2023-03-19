@@ -6,9 +6,9 @@ const Footer = () => {
         <footer className="blue">
             
                 <div className="container">
-                <h5 className="white-text">CopyRight  
+                <h6 className="white-text text">CopyRight
              <FontAwesomeIcon icon={faCopyright} className='view-icon'/>
-                Marko Grujicic </h5>
+                Marko Grujicic </h6>
                 </div>
             
             

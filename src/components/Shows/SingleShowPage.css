@@ -10,3 +10,10 @@
 .tags:hover {
   cursor: default;
 }
+.singlePageCast-image {
+  width: 100%;
+  height: 200px;
+}
+.singlePageCast-text {
+  font-size: 15px !important;
+}

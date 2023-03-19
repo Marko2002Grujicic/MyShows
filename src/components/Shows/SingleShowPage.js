@@ -7,7 +7,7 @@ const SingleShowPage = () => {
     const [singleShow, setSingleShow] = useState([]);
     const {id} = useParams();
     useEffect(() => {
-        fetch(`https://api.tvmaze.com/shows/${id}`)
+        fetch(`https://api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast&embed[]=crew&embed[]=episodes&embed[]=akas`)
           .then((response) => response.json())
           .then((data) =>{
             setSingleShow(data)})
@@ -23,7 +23,29 @@ const SingleShowPage = () => {
           ))}
         </div>
         );
+
+      const renderCast = (cast) => {
         
+        if(!cast){
+            return null;
+        }
+        const castSliced = cast.slice(0,8);
+        console.log(cast)
+        return(
+            
+            castSliced.map((member) => (
+                <div className="col s3">
+                <div className="card cast">
+                    <div class="card-image">
+                        <img src={member.person.image.original} className="singlePageCast-image"/>
+                        <span class="card-title singlePageCast-text">{member.person.name}</span>
+                    </div>
+                </div>
+                </div>
+        )
+          ))};
+     
+
     return(
         <div className="container">
             {Object.keys(singleShow).length > 0 ? (
@@ -39,10 +61,17 @@ const SingleShowPage = () => {
                         {renderGenres(singleShow)}
                     </div>
                     <div className="section">
-                        {singleShow.summary}
-                        </div>
-                    
+                        {(singleShow.summary)}
+                    </div>
                 </div>
+                <div className="row">
+                    
+                        <div className="col s12">
+                        <h2>Cast</h2>
+                            {singleShow._embedded.cast && renderCast(singleShow._embedded.cast)}
+                            </div>
+                        </div>
+                        
             </div>
             ): (
                 <LoadingAnimation/>
