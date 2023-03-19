@@ -26,3 +26,19 @@
   display: flex;
   justify-content: space-around;
 }
+.summary {
+  padding-top: 70px !important;
+  font-size: 22px;
+}
+@media screen and (max-width: 800px) {
+  .summary {
+    padding-top: 0px !important;
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .tags {
+    margin-top: 20px;
+    border-radius: 100px;
+  }
+}

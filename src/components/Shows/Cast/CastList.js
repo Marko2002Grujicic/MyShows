@@ -6,7 +6,6 @@ const CastList = ({cast}) => {
             return null;
         }
         const castSliced = cast.slice(0,8);
-        console.log(cast)
         return(
             
             castSliced.map((member) => (
@@ -14,8 +13,8 @@ const CastList = ({cast}) => {
                 <div className='row'>
                 <div className='container'>
                 <div className="card cast">
-                        <div className='col s2'>
-                        <img src={member.person.image.original} className="singlePageCast-image-list"/>
+                        <div className='col l2 m2 s6'>
+                        <img alt="cast" src={member.person.image.original} className="singlePageCast-image-list"/>
                         </div>
                         <div className='col s3'>
                         <h2 className="card-title singlePageCast-text"><b>{member.person.name}</b></h2>

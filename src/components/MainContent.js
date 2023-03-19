@@ -7,7 +7,6 @@ const MainContent = ({shows, searchQuery, setSearchQuery}) => {
 
     
     const filteredShows = shows.filter((show) => show.name.toLowerCase().includes(searchQuery.toLowerCase()))
-    console.log(filteredShows);
 
     return (
         <div className="container">

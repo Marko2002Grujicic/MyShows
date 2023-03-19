@@ -7,20 +7,17 @@ import { faTh, faThList } from "@fortawesome/free-solid-svg-icons";
 import CastGrid from "./Cast/CastGrid";
 import CastList from "./Cast/CastList";
 
-const SingleShowPage = ({ layout, setLayout, isLoading, setIsLoading }) => {
+const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
   const [singleShow, setSingleShow] = useState({});
   const { id } = useParams();
 
    useEffect(() => {
     const storedLayout = localStorage.getItem("layout") || layout;
     setLayout(storedLayout);
-    setIsLoading(true);
     fetch(`https://api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast&embed[]=crew&embed[]=episodes&embed[]=akas`)
       .then((response) => response.json())
       .then((data) => {
-        setSingleShow(data);
-        setIsLoading(false);
-        console.log(singleShow);
+      setSingleShow(data);
       });
   }, [id, setLayout, layout]);
  
@@ -53,13 +50,13 @@ const SingleShowPage = ({ layout, setLayout, isLoading, setIsLoading }) => {
   }
 
   return (
-    <div className="container">
+    <div className="container" id="container" >
       {Object.keys(singleShow).length > 0 ? (
-        <div className="row gap">
-          <div className="col s5">
+        <div className="row gap" >
+          <div className="col s12 m6 l6">
             <img src={singleShow.image.original} alt="" className="singlePage-image" />
           </div>
-          <div className="col s7">
+          <div className="col s12 m6 l6">
             <div className="row">
               <div className="section">
                 <h3>{capitalizeName(singleShow.name)}</h3>
@@ -70,7 +67,7 @@ const SingleShowPage = ({ layout, setLayout, isLoading, setIsLoading }) => {
             </div>
             <div className="row">
               <div className="section">
-                <div className="col m12">{stripTags(singleShow.summary)}</div>
+                <div className="col m12 summary">{stripTags(singleShow.summary)}</div>
               </div>
             </div>
           </div>

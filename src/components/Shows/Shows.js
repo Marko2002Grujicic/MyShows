@@ -14,11 +14,12 @@ const Shows = ({shows}) =>{
         
         <div className="row gap" id='container'>
         {shows.map(show => (
-            <div className={`col l4 m6 s12 smallest`} key={show.id} onClick={()=> handleShowClick(show.id)}>
+            <div className={`col l4 m6 s12 smallest pointer
+              }`} key={show.id} onClick={()=> handleShowClick(show.id)}>
                 <div className="card">
                     <div className="card-image changedHeight">
-                        <img src={show.image.original} className="cover-image"/>
-                        <a className="btn-floating halfway-fab blue rating"><i className="material-icons">{show.rating.average}</i></a>
+                        <img alt="cover" src={show.image.original} className="cover-image"/>
+                        <a href={show.id} className="btn-floating halfway-fab blue rating"><i className="material-icons">{show.rating.average}</i></a>
                     </div>
                     <div className={`card-content changedContent `} >
                     <p className="card-title">{show.name}</p>
