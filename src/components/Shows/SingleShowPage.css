@@ -1,0 +1,12 @@
+.row {
+  padding-top: 50px;
+}
+.singlePage-image {
+  width: 100%;
+}
+.tags {
+  margin-right: 20px;
+}
+.tags:hover {
+  cursor: default;
+}

@@ -1,4 +1,5 @@
 import 'materialize-css'
+import { useNavigate } from 'react-router-dom';
 import Shows from './Shows/Shows'
 const MainContent = ({shows}) => {
     return (
