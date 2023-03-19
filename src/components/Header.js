@@ -4,11 +4,14 @@ import './Header.css'
 const Header = () => {
     const navigate = useNavigate()
     return(
-        <nav className='col s12'>
-            <div className='nav-wrapper blue'>
-            <a className='brand-logo blue' onClick={()=> navigate(`/`)}>My Shows</a>
-            </div>
+        <nav className='col s12 flex'>
+            <div className='nav-wrapper blue header'>
+                <div className='flex'>
+                <span id="header"className='blue pointer' onClick={()=> navigate(`/`)}>My Shows</span>
+                <span className='blue pointer' onClick={()=> navigate(`/about`)}>About</span>
+                </div>
             
+            </div>
         </nav>
     )
 }

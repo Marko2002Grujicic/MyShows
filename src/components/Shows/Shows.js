@@ -10,11 +10,11 @@ const Shows = ({shows}) =>{
       };
 
     return (
-        <>
+       
         
-        <div className="row gap">
+        <div className="row gap" id='container'>
         {shows.map(show => (
-            <div className={`col l4 m6 s12 `} key={show.id} onClick={()=> handleShowClick(show.id)}>
+            <div className={`col l4 m6 s12 smallest`} key={show.id} onClick={()=> handleShowClick(show.id)}>
                 <div className="card">
                     <div className="card-image changedHeight">
                         <img src={show.image.original} className="cover-image"/>
@@ -29,7 +29,7 @@ const Shows = ({shows}) =>{
         ))}
             
         </div>
-        </>
+      
     )
 }
 export default Shows

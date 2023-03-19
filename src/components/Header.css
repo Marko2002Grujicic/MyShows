@@ -1,3 +1,18 @@
 .nav-wrapper {
   text-align: left;
 }
+#header {
+  padding-left: 50px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  font-weight: 500;
+}
+.pointer {
+  cursor: pointer;
+}

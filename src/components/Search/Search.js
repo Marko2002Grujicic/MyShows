@@ -7,7 +7,7 @@ const Search = ({searchQuery, setSearchQuery}) => {
     return (
         <div className="container">
         
-    <div className="nav-wrapper">
+      <div className="nav-wrapper">
       <form>
         <div className="input-field">
           <input id="search" type="search" placeholder="Search shows" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)}/>

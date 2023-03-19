@@ -52,7 +52,6 @@ const SingleShowPage = ({ layout, setLayout, isLoading, setIsLoading }) => {
     return summary.replace(/(<([^>]+)>)/gi, "");
   }
 
-
   return (
     <div className="container">
       {Object.keys(singleShow).length > 0 ? (
