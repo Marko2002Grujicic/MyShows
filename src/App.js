@@ -38,6 +38,7 @@ function App() {
         <Route path="/" element={<MainContent shows={shows} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />}/>
         <Route path="/shows/:id" element={<SingleShowPage layout={layout} setLayout={setLayout} isLoading={isLoading} setIsLoading={setIsLoading}/>}/>
         <Route path="/about" element={<About/>}/>
+        <Route path='*' element={<MainContent shows={shows} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />}/>
       </Routes>
       <Footer/>
     </div>
