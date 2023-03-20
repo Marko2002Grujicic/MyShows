@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router';
+import { Route, Routes, Navigate } from 'react-router';
 import './App.css';
 import MainContent from './components/MainContent';
 import Header from './components/Header'
@@ -38,7 +38,7 @@ function App() {
         <Route path="/" element={<MainContent shows={shows} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />}/>
         <Route path="/shows/:id" element={<SingleShowPage layout={layout} setLayout={setLayout} isLoading={isLoading} setIsLoading={setIsLoading}/>}/>
         <Route path="/about" element={<About/>}/>
-        <Route path='*' element={<Navigate replace to={'/home'} />}/>
+        <Route path='*' element={<Navigate replace to={'/'} />}/>
       </Routes>
       <Footer/>
     </div>
