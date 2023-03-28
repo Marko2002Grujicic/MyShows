@@ -35,10 +35,18 @@ I'm using [TvMaze API ](https://www.tvmaze.com/api) to get tv shows.
 
 - #### React
 - #### Materialize
+- #### TvMaze API
 
-### Key concepts:-
+### Key concepts:
 
+- #### React components
+- #### React state and props
 - #### React hooks
+- #### Materialize CSS
+- #### Fetching data from an API
+- #### Handling events
+- #### String manipulation
+- #### Filtering data
 - #### JavaScript Object Oriented Programming
 
 <!-- GETTING STARTED -->
