@@ -1,5 +1,6 @@
 .gap {
   padding-top: 5%;
+  min-height: 95vh;
 }
 .singlePage-image {
   width: 100%;

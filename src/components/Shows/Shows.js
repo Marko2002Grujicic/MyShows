@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 const Shows = ({shows}) =>{
     const navigate = useNavigate();
-
+    console.log(shows);
     const handleShowClick = (id) => {
         navigate(`/shows/${id}`);
       };

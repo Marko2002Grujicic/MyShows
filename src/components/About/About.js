@@ -6,12 +6,12 @@ const About = () => {
             <div className="section ">
                 <h3 className="title">About</h3>
                 <p>This project is created with 
-                <a id='cursor'  href='https://www.tvmaze.com/api'> TvMaze API</a>, 
-                <a id='cursor'  href='https://react.dev'> React</a>, 
-                <a id='cursor'  href='https://materializecss.com'> Materialize</a>, 
-                <a id='cursor'  href='https://en.wikipedia.org/wiki/JavaScript'> Javascript</a>, 
-                <a id='cursor'  href='https://en.wikipedia.org/wiki/HTML'> Html</a> and 
-                <a id='cursor'  href='https://en.wikipedia.org/wiki/CSS'> Css</a> </p>
+                <span > TvMaze API</span>, 
+                <span > React</span>, 
+                <span > Materialize</span>, 
+                <span > Javascript</span>, 
+                <span > Html</span> and 
+                <span> Css</span> </p>
             </div>
             <div className='divider'></div>
             <div className='section'>

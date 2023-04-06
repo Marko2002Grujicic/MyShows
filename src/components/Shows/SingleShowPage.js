@@ -10,16 +10,18 @@ import CastList from "./Cast/CastList";
 const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
   const [singleShow, setSingleShow] = useState({});
   const { id } = useParams();
+  const [storedId, setStoredId] = useState(() =>localStorage.getItem("storedId") || id)
 
    useEffect(() => {
     const storedLayout = localStorage.getItem("layout") || layout;
     setLayout(storedLayout);
-    fetch(`https://api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast&embed[]=crew&embed[]=episodes&embed[]=akas`)
+    localStorage.setItem('storedId', storedId)
+    fetch(`https://api.tvmaze.com/shows/${storedId}?embed[]=seasons&embed[]=cast&embed[]=crew&embed[]=episodes&embed[]=akas`)
       .then((response) => response.json())
       .then((data) => {
       setSingleShow(data);
       });
-  }, [id, setLayout, layout]);
+  }, [storedId, setLayout, layout]);
  
   useEffect(() => {
     localStorage.setItem("layout", layout);
@@ -51,10 +53,10 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
 
   if(!singleShow){
     setIsLoading(true)
-    return
   }
 
   return (
+    
     <div className="container" id="container" >
       {Object.keys(singleShow).length > 0 ? (
         <div className="row gap" >
