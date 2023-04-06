@@ -11,16 +11,18 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
   const [singleShow, setSingleShow] = useState({});
   const { id } = useParams();
   const [storedId, setStoredId] = useState(() =>localStorage.getItem("storedId") || id)
-
    useEffect(() => {
     const storedLayout = localStorage.getItem("layout") || layout;
     setLayout(storedLayout);
     localStorage.setItem('storedId', storedId)
-    fetch(`https://api.tvmaze.com/shows/${storedId}?embed[]=seasons&embed[]=cast&embed[]=crew&embed[]=episodes&embed[]=akas`)
+    fetch(`https://api.tvmaze.com/shows/${storedId}?embed[]=seasons&embed[]=cast`)
       .then((response) => response.json())
       .then((data) => {
       setSingleShow(data);
       });
+      return () => {
+        localStorage.removeItem("storedId");
+      };
   }, [storedId, setLayout, layout]);
  
   useEffect(() => {
@@ -54,7 +56,7 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
   if(!singleShow){
     setIsLoading(true)
   }
-
+  console.log(singleShow);
   return (
     
     <div className="container" id="container" >
@@ -94,6 +96,31 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
               ) : (
                 <CastGrid cast={singleShow._embedded.cast} />
               )}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col s12">
+                <div className="col s12">
+                <h4>Seasons:</h4>
+                </div>
+                
+                <div className="col s12">
+                  {singleShow._embedded.seasons.map(season => (
+                    <a href={season.url} id='cursor' target="_blank">
+                      <div className={`col l4 m6 s12 season`} key={season.id} >
+                    <div className="card pointer">
+                        <div className="card-image changedHeight smallImage">
+                            <img src={season.image.original} className="cover-image" alt="cover"/>
+                        </div>
+                        <div className={`card-content `} >
+                        <p className="card-title">Season: {season.number}</p>
+                        </div>
+                    </div>
+                </div>
+                    </a>
+                    
+                  ))}
+                </div>
             </div>
           </div>
         </div>

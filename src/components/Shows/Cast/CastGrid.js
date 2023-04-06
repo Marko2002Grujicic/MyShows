@@ -10,7 +10,8 @@ const CastGrid = ({cast}) => {
         return(
             
             castSliced.map((member) => (
-                <div className="col s6 m4 l2">
+                
+                <div className="col s6 m3 l2">
                 <div className="card cast">
                     <div className="card-image">
                         <img alt="cast" src={member.person.image.original} className="singlePageCast-image"/>
