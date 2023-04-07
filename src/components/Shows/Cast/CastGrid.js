@@ -15,7 +15,9 @@ const CastGrid = ({cast}) => {
                 <div className="card cast">
                     <div className="card-image">
                         <img alt="cast" src={member.person.image.original} className="singlePageCast-image"/>
-                        <h6 className="card-title singlePageCast-text">{member.person.name}</h6>
+                        <h6 className="singlePageCast-text">{member.person.name}</h6>
+            
+                        
                     </div>
                 </div>
                 </div>

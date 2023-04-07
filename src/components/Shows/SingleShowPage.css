@@ -19,6 +19,8 @@
 }
 .singlePageCast-text {
   font-size: 15px !important;
+  height: 50px;
+  text-align: center;
 }
 .view-icon {
   color: #2196f3;
@@ -30,6 +32,13 @@
 .summary {
   padding-top: 70px !important;
   font-size: 22px;
+}
+.season {
+  max-width: 450px;
+}
+.center {
+  display: flex !important;
+  justify-content: flex-end !important;
 }
 @media screen and (max-width: 800px) {
   .summary {
@@ -44,5 +53,9 @@
   .tags {
     margin-top: 20px;
     border-radius: 100px;
+  }
+  .season {
+    width: 100% !important;
+    margin-left: 0 !important;
   }
 }

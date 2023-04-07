@@ -5,4 +5,13 @@
 }
 .singlePageCast-text {
   font-size: 20px !important;
+  padding-left: 10px;
+}
+.centered {
+  display: flex;
+  justify-content: flex-start;
+  min-width: 200px;
+}
+.noPadding {
+  max-width: 400px;
 }

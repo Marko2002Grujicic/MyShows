@@ -7,25 +7,29 @@ const CastList = ({cast}) => {
         }
         const castSliced = cast.slice(0,8);
         return(
-            
-            castSliced.map((member) => (
-                <>
-                <div className='row'>
-                <div className='container'>
-                <div className="card cast">
-                        <div className='col l2 m2 s6'>
+            <div className='row'>
+                {castSliced.map((member) => (
+               <>
+               <div className='container col m6 s12 noPadding'>
+               <div className="card cast">
+                <div className='centered'>
                         <img alt="cast" src={member.person.image.original} className="singlePageCast-image-list"/>
-                        </div>
-                        <div className='col s3'>
-                        <h2 className="card-title singlePageCast-text"><b>{member.person.name}</b></h2>
-                        </div>
-                        
-                    </div>
-                    </div>
+                       <h2 className="card-title singlePageCast-text"><b>{member.person.name}</b></h2>
                 </div>
-                <div className='divider'></div>
-                </>
-        )))};
+                       
+                
+                       
+                   </div>
+                   </div>
+
+               </>
+               
+        
+               
+               
+       ))}
+            </div>
+            )};
 
     return (
         renderCast(cast)

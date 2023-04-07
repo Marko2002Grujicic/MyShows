@@ -12,7 +12,7 @@ const SearchedShows = ({shows, setSearchQuery, setIsLoading}) =>{
         <>
         <div className="row gap">
         {shows.map(show => (
-            <div className={`col l4 m6 s12 `} key={show.show.id} onClick={()=> handleShowClick(show.show.id)}>
+            <div className={`col l4 m6 s12`} key={show.show.id} onClick={()=> handleShowClick(show.show.id)}>
                 <div className="card pointer">
                     <div className="card-image changedHeight">
                         <img src={show?.show?.image?.original} className="cover-image" alt="cover"/>

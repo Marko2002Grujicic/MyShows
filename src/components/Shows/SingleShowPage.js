@@ -62,10 +62,10 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
     <div className="container" id="container" >
       {Object.keys(singleShow).length > 0 ? (
         <div className="row gap" >
-          <div className="col s12 m6 l6">
+          <div className="col s12 l6">
             <img src={singleShow.image.original} alt="" className="singlePage-image" />
           </div>
-          <div className="col s12 m6 l6">
+          <div className="col s12 l6">
             <div className="row">
               <div className="section">
                 <h3>{capitalizeName(singleShow.name)}</h3>
@@ -92,7 +92,8 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
                 />
               </h3>
               {layout === "list" ? (
-                <CastList cast={singleShow._embedded.cast} />
+                  <CastList cast={singleShow._embedded.cast} />
+                
               ) : (
                 <CastGrid cast={singleShow._embedded.cast} />
               )}
@@ -107,7 +108,7 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
                 <div className="col s12">
                   {singleShow._embedded.seasons.map(season => (
                     <a href={season.url} id='cursor' target="_blank">
-                      <div className={`col l4 m6 s12 season`} key={season.id} >
+                      <div className={`col l4 m6 s12 season center`} key={season.id} >
                     <div className="card pointer">
                         <div className="card-image changedHeight smallImage">
                             <img src={season.image.original} className="cover-image" alt="cover"/>
