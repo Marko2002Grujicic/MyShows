@@ -7,6 +7,7 @@ import { faTh, faThList } from "@fortawesome/free-solid-svg-icons";
 import CastGrid from "./Cast/CastGrid";
 import CastList from "./Cast/CastList";
 
+
 const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
   const [singleShow, setSingleShow] = useState({});
   const { id } = useParams();
@@ -63,7 +64,7 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
       {Object.keys(singleShow).length > 0 ? (
         <div className="row gap" >
           <div className="col s12 l6">
-            <img src={singleShow.image.original} alt="" className="singlePage-image" />
+            <img src={singleShow?.image?.original} alt="" className="singlePage-image" />
           </div>
           <div className="col s12 l6">
             <div className="row">
@@ -107,7 +108,7 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
                 
                 <div className="col s12">
                   {singleShow._embedded.seasons.map(season => (
-                    <a href={season.url} id='cursor' target="_blank">
+                    <a href={season.url} id='cursor' target="_blank" rel="noreferrer">
                       <div className={`col l4 m6 s12 season center`} key={season.id} >
                     <div className="card pointer">
                         <div className="card-image changedHeight smallImage">
