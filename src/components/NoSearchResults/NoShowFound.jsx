@@ -1,3 +1,4 @@
+import React from 'react'
 import {faFaceMeh} from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './NoShowFound.css'

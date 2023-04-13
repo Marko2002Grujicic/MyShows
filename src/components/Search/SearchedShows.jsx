@@ -1,5 +1,7 @@
+import React from "react";
 import { useNavigate } from "react-router";
 import './Search.css'
+
 
 const SearchedShows = ({shows, setSearchQuery, setIsLoading}) =>{
     const navigate = useNavigate();
@@ -15,7 +17,8 @@ const SearchedShows = ({shows, setSearchQuery, setIsLoading}) =>{
             <div className={`col l4 m6 s12`} key={show.show.id} onClick={()=> handleShowClick(show.show.id)}>
                 <div className="card pointer">
                     <div className="card-image changedHeight">
-                        <img src={show?.show?.image?.original} className="cover-image" alt="cover"/>
+                        <img src={show && show.show && show.show.image && show.show.image.original ? show.show.image.original : '/loading.gif'
+} className="cover-image" alt="cover"/>
                         <a href={show.show.id} className="btn-floating halfway-fab blue rating"><i className="material-icons">{show.show.rating.average}</i></a>
                     </div>
                     <div className={`card-content `} >

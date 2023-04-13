@@ -1,3 +1,4 @@
+import React from 'react'
 import 'materialize-css'
 import Search from './Search/Search'
 import Shows from './Shows/Shows'

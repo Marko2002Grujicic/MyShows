@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./SingleShowPage.css";
@@ -11,7 +12,7 @@ import CastList from "./Cast/CastList";
 const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
   const [singleShow, setSingleShow] = useState({});
   const { id } = useParams();
-  const [storedId, setStoredId] = useState(() =>localStorage.getItem("storedId") || id)
+  const [storedId] = useState(() =>localStorage.getItem("storedId") || id)
    useEffect(() => {
     const storedLayout = localStorage.getItem("layout") || layout;
     setLayout(storedLayout);
@@ -64,7 +65,7 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
       {Object.keys(singleShow).length > 0 ? (
         <div className="row gap" >
           <div className="col s12 l6">
-            <img src={singleShow?.image?.original} alt="" className="singlePage-image" />
+            <img src={singleShow && singleShow.image && singleShow.image.original} alt="" className="singlePage-image" />
           </div>
           <div className="col s12 l6">
             <div className="row">
@@ -108,11 +109,14 @@ const SingleShowPage = ({ layout, setLayout, setIsLoading }) => {
                 
                 <div className="col s12">
                   {singleShow._embedded.seasons.map(season => (
-                    <a href={season.url} id='cursor' target="_blank" rel="noreferrer">
+                    <a href={season.url} id='cursor' target="_blank" rel="noopener noreferrer">
                       <div className={`col l4 m6 s12 season center`} key={season.id} >
                     <div className="card pointer">
                         <div className="card-image changedHeight smallImage">
-                            <img src={season.image.original} className="cover-image" alt="cover"/>
+                        {season && season.image && season.image.original ? (
+                        <img src={season.image.original} className="cover-image" alt="cover" />) : <img src='/loading.gif' className="cover-image" alt="cover" />
+                        }
+
                         </div>
                         <div className={`card-content `} >
                         <p className="card-title">Season: {season.number}</p>

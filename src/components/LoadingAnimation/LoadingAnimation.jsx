@@ -1,5 +1,5 @@
 import './LoadingAnimation.css'
-
+import React from 'react'
 export const LoadingAnimation = () => {
     return (
         <div className="sk-cube-grid">

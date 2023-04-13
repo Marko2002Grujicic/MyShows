@@ -1,4 +1,5 @@
 import './CastList.css'
+import React from 'react'
 const CastList = ({cast}) => {
 
     const renderCast = (cast) => {

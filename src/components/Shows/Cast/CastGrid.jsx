@@ -1,5 +1,5 @@
 import './CastGrid.css'
-
+import React from 'react'
 const CastGrid = ({cast}) => {
 
     const renderCast = (cast) => {
