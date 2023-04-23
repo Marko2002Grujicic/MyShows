@@ -14,7 +14,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project:-
+## About The Project:
 
 ![Preview](./preview.png)
 
