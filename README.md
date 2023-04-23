@@ -61,10 +61,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-### To run project:-
+### To run project:
 
 ### `npm start`
 
-### To build project:-
+### To build project:
 
 ### `npm run build`
