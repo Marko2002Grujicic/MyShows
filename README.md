@@ -20,7 +20,7 @@
 
 MyShows is a Tv Show database website.
 
-#### The common funtionalities are:-
+#### The common funtionalities are:
 
 - The user can see all the tv shows available in database and their ratings
 - The user can see the detailed description of the tv show
