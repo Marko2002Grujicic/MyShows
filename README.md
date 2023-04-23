@@ -53,6 +53,9 @@ I'm using [TvMaze API ](https://www.tvmaze.com/api) to get tv shows.
 
 # Getting Started
 
+## After cloning github repository
+### run `npm i` to install all dependency necessary
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
