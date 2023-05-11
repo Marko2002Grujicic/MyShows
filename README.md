@@ -14,13 +14,13 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project:-
+## About The Project:
 
 ![Preview](./preview.png)
 
 MyShows is a Tv Show database website.
 
-#### The common funtionalities are:-
+#### The common funtionalities are:
 
 - The user can see all the tv shows available in database and their ratings
 - The user can see the detailed description of the tv show
@@ -53,14 +53,18 @@ I'm using [TvMaze API ](https://www.tvmaze.com/api) to get tv shows.
 
 # Getting Started
 
+## After cloning github repository
+### To install all dependency necessary:
+### `npm i` 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-### To run project:-
+### To run project:
 
 ### `npm start`
 
-### To build project:-
+### To build project:
 
 ### `npm run build`
